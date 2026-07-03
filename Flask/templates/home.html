@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Lender | AI Loan Approval System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-building-columns"></i>
+        Smart Lender
+    </div>
+
+    <nav>
+
+        <a href="/">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="{{ url_for('predict') }}">Predict</a>
+
+    </nav>
+
+</header>
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+AI Powered Loan <br>
+Approval Prediction
+</h1>
+
+<p>
+
+Evaluate loan applications instantly using Machine Learning.
+Our intelligent system analyzes applicant details and predicts
+loan eligibility with speed, transparency and accuracy.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="{{ url_for('predict') }}" class="btn-primary">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+Start Prediction
+
+</a>
+
+<a href="#services" class="btn-outline">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- About -->
+
+<section id="about" class="about">
+
+<div class="section-title">
+
+<h2>Why Smart Lender?</h2>
+
+<p>
+
+A next-generation banking assistant built using Artificial Intelligence
+to simplify loan approval decisions.
+
+</p>
+
+</div>
+
+<div class="about-grid">
+
+<div class="about-card">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>Machine Learning</h3>
+
+<p>
+
+Predict loan approval using trained machine learning algorithms.
+
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Accurate Decisions</h3>
+
+<p>
+
+Reduce manual verification with intelligent prediction models.
+
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>Fast Processing</h3>
+
+<p>
+
+Receive approval predictions in just a few seconds.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- Services -->
+
+<section id="services" class="services">
+
+<div class="section-title">
+
+<h2>Platform Features</h2>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-box">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h3>Applicant Analysis</h3>
+
+<p>
+
+Evaluate applicant profile, employment,
+income and financial history.
+
+</p>
+
+</div>
+
+
+
+<div class="service-box">
+
+<i class="fa-solid fa-money-check-dollar"></i>
+
+<h3>Loan Assessment</h3>
+
+<p>
+
+Analyze loan amount,
+term period and repayment capability.
+
+</p>
+
+</div>
+
+
+
+<div class="service-box">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Secure Prediction</h3>
+
+<p>
+
+Privacy-focused prediction system
+with reliable decision making.
+
+</p>
+
+</div>
+
+
+
+<div class="service-box">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>AI Recommendation</h3>
+
+<p>
+
+Generate instant approval or rejection
+using trained ML models.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>
+
+Ready to Check Loan Eligibility?
+
+</h2>
+
+<p>
+
+Click below and experience intelligent banking powered by Artificial Intelligence.
+
+</p>
+
+<a href="{{ url_for('predict') }}" class="cta-btn">
+
+Predict Loan
+
+</a>
+
+</section>
+
+
+
+
+<footer>
+
+<div class="footer-content">
+
+<h3>Smart Lender</h3>
+
+<p>
+
+AI Based Loan Approval Prediction System
+
+</p>
+
+<div class="social">
+
+<i class="fab fa-facebook"></i>
+
+<i class="fab fa-instagram"></i>
+
+<i class="fab fa-linkedin"></i>
+
+<i class="fab fa-github"></i>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 Smart Lender | Developed using Flask & Machine Learning
+
+</p>
+
+</footer>
+
+
+</body>
+</html>

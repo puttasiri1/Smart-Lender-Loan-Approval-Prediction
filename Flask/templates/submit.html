@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loan Prediction Result</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-building-columns"></i>
+
+Smart Lender
+
+</div>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/predict">Predict Again</a>
+
+</nav>
+
+</header>
+
+<section class="result-section">
+
+<div class="result-card">
+
+{% if prediction == 1 %}
+
+<div class="result-icon approved">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<h1 class="approved-text">
+
+Loan Approved
+
+</h1>
+
+<p>
+
+Congratulations! 🎉
+
+Based on the applicant's financial profile, income,
+credit history and loan details, our Machine Learning
+model predicts that this loan application is eligible
+for approval.
+
+</p>
+
+{% else %}
+
+<div class="result-icon rejected">
+
+<i class="fa-solid fa-circle-xmark"></i>
+
+</div>
+
+<h1 class="rejected-text">
+
+Loan Not Approved
+
+</h1>
+
+<p>
+
+Unfortunately, this application does not satisfy
+the eligibility criteria required by the prediction
+model. The applicant may improve financial records
+and apply again later.
+
+</p>
+
+{% endif %}
+
+<div class="result-buttons">
+
+<a href="/" class="home-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="/predict" class="again-btn">
+
+<i class="fa-solid fa-rotate-right"></i>
+
+Predict Again
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
