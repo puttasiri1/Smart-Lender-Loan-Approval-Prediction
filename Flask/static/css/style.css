@@ -826,3 +826,28 @@ transform:translateY(0);
 }
 
 }
+/* Contact Form Textarea */
+
+textarea{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:15px;
+
+outline:none;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+textarea:focus{
+
+box-shadow:0 0 10px #00d4ff;
+
+}

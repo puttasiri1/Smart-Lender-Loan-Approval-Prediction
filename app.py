@@ -4,79 +4,30 @@ import numpy as np
 
 app = Flask(__name__)
 
-# ==============================
-# Load Trained Model
-# ==============================
-
+# Load Model and Scaler
 model = pickle.load(open("rdf.pkl", "rb"))
+scaler = pickle.load(open("scale1.pkl", "rb"))
 
-# ==============================
+
+# -----------------------------
 # Home Page
-# ==============================
-
+# -----------------------------
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template("home.html")
 
 
-# ==============================
-# About Page
-# ==============================
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
-# ==============================
-# Workflow Page
-# ==============================
-
-@app.route('/workflow')
-def workflow():
-    return render_template('workflow.html')
-
-
-# ==============================
+# -----------------------------
 # Prediction Form
-# ==============================
-
+# -----------------------------
 @app.route('/predict')
 def predict():
-    return render_template('predict.html')
+    return render_template("predict.html")
 
 
-# ==============================
-# Model Performance
-# ==============================
-
-@app.route('/performance')
-def performance():
-    return render_template('performance.html')
-
-
-# ==============================
-# Loan Tips
-# ==============================
-
-@app.route('/tips')
-def tips():
-    return render_template('tips.html')
-
-
-# ==============================
-# Contact Page
-# ==============================
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-
-# ==============================
+# -----------------------------
 # Prediction Result
-# ==============================
-
+# -----------------------------
 @app.route('/submit', methods=['POST'])
 def submit():
 
@@ -94,7 +45,7 @@ def submit():
         Credit_History = float(request.form['Credit_History'])
         Property_Area = float(request.form['Property_Area'])
 
-        data = np.array([[
+        values = np.array([[
 
             Gender,
             Married,
@@ -110,7 +61,9 @@ def submit():
 
         ]])
 
-        prediction = model.predict(data)[0]
+        values = scaler.transform(values)
+
+        prediction = model.predict(values)[0]
 
         return render_template(
             "submit.html",
@@ -118,12 +71,12 @@ def submit():
         )
 
     except Exception as e:
-        return f"<h2>Error:</h2><br>{e}"
+
+        return f"Error : {e}"
 
 
-# ==============================
-# Run Application
-# ==============================
-
+# -----------------------------
+# Main
+# -----------------------------
 if __name__ == "__main__":
     app.run(debug=True)
