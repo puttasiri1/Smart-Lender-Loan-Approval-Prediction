@@ -16,6 +16,37 @@ scaler = pickle.load(open("scale1.pkl", "rb"))
 def home():
     return render_template("home.html")
 
+# -----------------------------
+# About Page
+# -----------------------------
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+
+# -----------------------------
+# Performance Page
+# -----------------------------
+@app.route('/performance')
+def performance():
+    return render_template("performance.html")
+
+
+# -----------------------------
+# Tips Page
+# -----------------------------
+@app.route('/tips')
+def tips():
+    return render_template("tips.html")
+
+
+# -----------------------------
+# Contact Page
+# -----------------------------
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
+
 
 # -----------------------------
 # Prediction Form
