@@ -23,6 +23,13 @@ def home():
 def about():
     return render_template("about.html")
 
+# -----------------------------
+# Workflow Page
+# -----------------------------
+@app.route('/workflow')
+def workflow():
+    return render_template("workflow.html")
+
 
 # -----------------------------
 # Performance Page
