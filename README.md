@@ -33,34 +33,6 @@ Smart Lender is a Machine Learning-based web application that predicts whether a
 
 ---
 
-## 📂 Project Structure
-
-```
-Smart-Lender
-│
-├── Dataset
-│   └── loan_prediction.csv
-│
-├── Training
-│   └── Loan Prediction using ML.ipynb
-│
-├── Flask
-│   ├── app.py
-│   ├── rdf.pkl
-│   ├── scale1.pkl
-│   ├── templates
-│   │   ├── home.html
-│   │   ├── predict.html
-│   │   └── submit.html
-│   └── static
-│       └── css
-│           └── style.css
-│
-├── README.md
-└── requirements.txt
-```
-
----
 
 ## 📊 Machine Learning Models
 
